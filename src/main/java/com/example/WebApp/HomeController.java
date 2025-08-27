@@ -40,4 +40,10 @@ public class HomeController {
     		return "Projeto GCMS - Prática 03";
 	}
 
+	//Endpoint hotfix - Pratica 4
+	@RequestMapping("/hotfix")
+	public @ResponseBody String hotfixEndpoint() {
+    		return "Hotfix aplicado!";
+	}	
+
 }

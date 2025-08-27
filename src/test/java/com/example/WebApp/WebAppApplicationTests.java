@@ -84,4 +84,12 @@ class WebAppApplicationTests {
             .andExpect(content().string("Projeto GCMS - Prática 03"));
     }
 
+    @Test
+    public void testHotfixEndpoint() throws Exception {
+        this.mockMvc.perform(get("/hotfix"))
+            .andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(content().string("Hotfix aplicado!"));
+    }
+
 }
