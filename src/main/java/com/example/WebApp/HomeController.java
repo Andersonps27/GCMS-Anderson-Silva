@@ -25,4 +25,13 @@ public class HomeController {
         	return "Bem-vindo(a), " + nome + "!";
         }
 	
+	// Endpoint da copia: Saudacao
+	@RequestMapping("/saudacao")
+	public @ResponseBody String saudacao(String nome) {
+    		java.time.LocalTime hora = java.time.LocalTime.now();
+    		String msg = (hora.isBefore(java.time.LocalTime.NOON)) ? "Bom dia" :
+                 	     (hora.isBefore(java.time.LocalTime.of(18,0))) ? "Boa tarde" : "Boa noite";
+    		return msg + ", " + nome + "!";
+	}
+
 }
