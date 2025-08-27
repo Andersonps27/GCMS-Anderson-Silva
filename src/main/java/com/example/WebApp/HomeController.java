@@ -24,7 +24,16 @@ public class HomeController {
     	public @ResponseBody String boasVindas(String nome) {
         	return "Bem-vindo(a), " + nome + "!";
         }
-	
+
+	// Endpoint 3 (copia): Saudacao
+	@RequestMapping("/saudacao")
+	public @ResponseBody String saudacao(String nome) {
+    		java.time.LocalTime hora = java.time.LocalTime.now();
+    		String msg = (hora.isBefore(java.time.LocalTime.NOON)) ? "Bom dia" :
+                 	     (hora.isBefore(java.time.LocalTime.of(18,0))) ? "Boa tarde" : "Boa noite";
+    		return msg + ", " + nome + "!";
+	}
+
 	// Novo endpoint 4: sobre
 	@RequestMapping("/sobre")
 	public @ResponseBody String sobre() {
