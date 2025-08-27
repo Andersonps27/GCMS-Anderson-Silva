@@ -10,5 +10,19 @@ public class HomeController {
 	@RequestMapping("/Anderson")
 	public @ResponseBody String greetingAnderson() {
 		return "Hello, Anderson!";
-	}	
+	}
+
+	// Novo endpoint 1: Soma de dois números
+    	@RequestMapping("/soma")
+    	public @ResponseBody String soma(int a, int b) {
+        	int resultado = a + b;
+        	return "Resultado: " + resultado;
+    	}
+
+    	// Novo endpoint 2: Boas-vindas genérica
+    	@RequestMapping("/boasvindas")
+    	public @ResponseBody String boasVindas(String nome) {
+        	return "Bem-vindo(a), " + nome + "!";
+        }
+	
 }

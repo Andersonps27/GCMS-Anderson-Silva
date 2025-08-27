@@ -51,4 +51,21 @@ class WebAppApplicationTests {
             .andExpect(status().isOk())
             .andExpect(content().string("Hello, Anderson!"));
     }
+
+    @Test
+    public void testSomaEndpoint() throws Exception {
+        this.mockMvc.perform(get("/soma").param("a", "2").param("b", "3"))
+            .andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(content().string("Resultado: 5"));
+    }
+
+    @Test
+    public void testBoasVindasEndpoint() throws Exception {
+        this.mockMvc.perform(get("/boasvindas").param("nome", "Fulano"))
+            .andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(content().string("Bem-vindo(a), Fulano!"));
+    }
+
 }
