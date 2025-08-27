@@ -25,4 +25,10 @@ public class HomeController {
         	return "Bem-vindo(a), " + nome + "!";
         }
 	
+	// Novo endpoint 4: sobre
+	@RequestMapping("/sobre")
+	public @ResponseBody String sobre() {
+    		return "Projeto GCMS - Prática 03";
+	}
+
 }

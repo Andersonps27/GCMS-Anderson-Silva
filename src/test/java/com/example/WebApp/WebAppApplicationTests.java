@@ -68,4 +68,12 @@ class WebAppApplicationTests {
             .andExpect(content().string("Bem-vindo(a), Fulano!"));
     }
 
+    @Test
+    public void testSobreEndpoint() throws Exception {
+        this.mockMvc.perform(get("/sobre"))
+            .andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(content().string("Projeto GCMS - Prática 03"));
+    }
+
 }
