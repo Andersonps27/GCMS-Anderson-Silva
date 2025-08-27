@@ -89,7 +89,7 @@ class WebAppApplicationTests {
         this.mockMvc.perform(get("/hotfix"))
             .andDo(print())
             .andExpect(status().isOk())
-            .andExpect(content().string("Hotfix (versão main)!"));
+            .andExpect(content().string("Hotfix (merge main & hotfix)!"));
     }
 
 }
