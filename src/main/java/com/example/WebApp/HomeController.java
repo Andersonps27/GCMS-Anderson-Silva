@@ -43,7 +43,7 @@ public class HomeController {
 	// Endpoint 6: Hotfix main
 	@RequestMapping("/hotfix")
 	public @ResponseBody String hotfixEndpoint() {
-    		return "Hotfix (versão main)!";
+    		return "Hotfix (merge main & hotfix)!";
 	}
 
 }
