@@ -17,6 +17,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    container:
+      image: docker://andersonps27/gcms:gcms-imagem
     permissions:
       contents: write
 
