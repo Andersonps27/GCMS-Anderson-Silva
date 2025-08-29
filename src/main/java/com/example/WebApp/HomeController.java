@@ -1,8 +1,10 @@
 package com.example.WebApp;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class HomeController {
@@ -19,9 +21,11 @@ public class HomeController {
 
 	// Novo endpoint 1: Soma de dois números
     	@RequestMapping("/soma")
-    	public @ResponseBody String soma(int a, int b) {
-        	int resultado = a + b;
-        	return "Resultado: " + resultado;
+    	public String soma(
+    		@RequestParam(name = "a", defaultValue = "2") int a,
+   		@RequestParam(name = "b", defaultValue = "3") int b) {
+    		int resultado = a + b;
+    		return "Resultado: " + resultado;
     	}
 
     	// Novo endpoint 2: Boas-vindas genérica
