@@ -1,15 +1,16 @@
-package com.example.WebApp;
+package com.example.webapp;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class HomeController {
 
-	@RequestMapping("/")
+	@GetMapping("/")
 	public @ResponseBody String root() {
 		return "Hello, World!";
 	}
@@ -19,14 +20,11 @@ public class HomeController {
 		return "Hello, Anderson!";
 	}
 
-	// Novo endpoint 1: Soma de dois números
-    	@RequestMapping("/soma")
-    	public String soma(
-    		@RequestParam(name = "a", defaultValue = "2") int a,
-   		@RequestParam(name = "b", defaultValue = "3") int b) {
-    		int resultado = a + b;
-    		return "Resultado: " + resultado;
-    	}
+	// Novo endpoint 1: Soma sem parametros
+    	@GetMapping("/soma")
+		public @ResponseBody int soma() {
+    		return 42; // valor fixo só pra teste
+	}
 
     	// Novo endpoint 2: Boas-vindas genérica
     	@RequestMapping("/boasvindas")
