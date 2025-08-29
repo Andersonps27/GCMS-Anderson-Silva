@@ -84,6 +84,7 @@ class WebAppApplicationTests {
             .andExpect(content().string("Projeto GCMS - Prática 03"));
     }
 
+    //corrigindo teste quebra proposital para Git Actions
     @Test
     public void testHotfixEndpointMain() throws Exception {
         this.mockMvc.perform(get("/hotfix"))
