@@ -84,13 +84,13 @@ class WebAppApplicationTests {
             .andExpect(content().string("Projeto GCMS - Prática 03"));
     }
 
-    //corrigindo teste quebra proposital para Docker
+    //teste quebra proposital para Docker gcms-imagem
     @Test
     public void testHotfixEndpointMain() throws Exception {
         this.mockMvc.perform(get("/hotfix"))
             .andDo(print())
             .andExpect(status().isOk())
-            .andExpect(content().string("Hotfix (merge main & hotfix)!"));
+            .andExpect(content().string("Quebra proposital para CI"));
     }
 
 }
